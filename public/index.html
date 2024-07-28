@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100vw;
+            height: 100vh;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .weather-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 400px;
+            padding: 20px;
+            background: linear-gradient(135deg, #71b7e6, #59b65d);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .search-weather {
+            display: flex;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .search-weather input[type="text"] {
+            width: 70%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .search-weather button {
+            width: 25%;
+            padding: 10px;
+            margin-left: 5%;
+            background-color: #34495ecd;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        .search-weather button:hover {
+            background-color: #34495e;
+        }
+
+        .weather-img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        .temperature {
+            font-size: 2em;
+            font-weight: bold;
+            color: #34495e;
+        }
+
+        .wind-dir-windspeed {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .wind-dir,
+        .windspeed {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            width: 45%;
+        }
+
+        .wind-dir img,
+        .windspeed img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+
+        .wind-dir p,
+        .windspeed p {
+            margin: 5px 0;
+            font-size: 1em;
+            color: #34495e;
+        }
+
+        .wind-dir span,
+        .windspeed span {
+            font-size: 1.2em;
+            color: #34495e;
+        }
+
+        .hidden{
+            display:none;
+        }
+    </style>
+
+    <script src="weather-app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+
+</head>
+
+<body>
+    <div class="weather-info">
+        <div class="search-weather">
+            <input type="text" class="city" placeholder="Enter City Name">
+            <button class="search">Search</button>
+        </div>
+        <img src="icons/cloudy.png" alt="weather-img" class="weather-img hidden">
+        <div class="temperature hidden">
+            __
+        </div>
+        <div class="wind-dir-windspeed hidden">
+            <div class="wind-dir">
+                <img src="icons/compass-icon.png" alt="">
+                <p>Wind Direction</p>
+                <span>__</span>
+            </div>
+            <div class="windspeed">
+                <img src="icons/ic wind.png" alt="">
+                <p>Wind Speed</p>
+                <span>__</span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
